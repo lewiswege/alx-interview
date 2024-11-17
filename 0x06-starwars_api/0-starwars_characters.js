@@ -3,7 +3,7 @@
 const request = require('request');
 
 const movieId = process.argv[2];
-const movieUrl = 'https://swapi-api.alx-tools.com/api/films/' + movieId;
+const movieEndpoint = 'https://swapi-api.alx-tools.com/api/films/' + movieId;
 
 function sendRequest (characterList, index) {
   if (characterList.length === index) {
@@ -11,7 +11,7 @@ function sendRequest (characterList, index) {
   }
 
   request(characterList[index], (error, response, body) => {
-    if (err0r) {
+    if (error) {
       console.log(error);
     } else {
       console.log(JSON.parse(body).name);
